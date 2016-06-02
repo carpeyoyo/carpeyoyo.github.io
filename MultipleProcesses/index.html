@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Running Multiple Processes on an AVR Microcontroller</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+<h1>Carpeyoyo's Projects</h1>
+
+<hr>
+
+<DIV style="float: left; width: 150px; background-color: #6698FF;">
+<p>
+<ul>
+  <!-- This is for the side menu bar -->
+  <li><a href="../index.html" class="navigation">Home</a></li>
+  <hr>
+  <hr>
+  <li><a href="index.html" class="navigation">AVR Multiple Processes</a></li>
+  <hr>
+  <li><a href="../Python-TicTacToe/index.html" class="navigation"> Python Tic Tac Toe</a></li>
+</ul>
+</p>
+</DIV>
+<DIV style="float: left; width: 60%; border-left: 20px solid white;">
+  <!-- This is for the main body -->
+
+<h3>Example of Running Multiple Processes on an AVR Microcontroller</h3>
+
+<p>
+The repository for this project can be found <a href="https://github.com/carpeyoyo/MultipleProcessAVRExample"> here</a>.
+</p>
+
+<p>
+The purpose of this project was to attempt to find an easy way in which multiple programs that were meant to loop forever, as microcontroller programs often do, could split the the microcontroller's execution time so that they appeared to be running concurrently. Since I wanted an easy way to see whether the code was working, I sent up two different processes that create a ripple effect on an ATtiny4313 each of which uses six LEDs. See the schematic below for the circuit. 
+</p>
+
+<object type="image/svg+xml" data="ripple_processes.svg" width="560"> SVG file should have been displayed here</object>
+
+<p>
+The first process uses the Port B pins and the second process uses the Port D pins. The lone LED that is connected to PA0 flips every time a timer interrupt handler is called. 
+</p>
+
+<p>
+One of the microcontroller's built timer is used as an interrupt, and how often it interrupts the currently running process determines how concurrently the processes seem to be running. For example, look at the youtube video embedded below. 
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AoaD8m736x8?loop=1" frameborder="1" allowfullscreen> Youtube video 
+ </iframe>
+
+<p>
+In the video, the version of the program running on top is interrupted eight times more often then the version running on the bottom. Each time a running process is interrupted, it has to go through a cleanup stage where the current register values are pushed onto the stack, and the current stack pointer is stored. Then, then the scheduler calls the next process to setup, where its stack pointer is reinstated, its registers are retrieved and the program again returns to the address last executed when the this process was interrupted. There is therefore move time spent in the overhead when the processes are switched more often, but it can clearly been seen in this example that interrupting more often can still make the two processes seem to run more currently. 
+</p>
+
+<p>
+One other thing that can be seen in the video is that the red LEDs blink twice as often as the white LEDs. In reality there are running identical instructions, except for the output port, and using the same nested waste time function called that is shared between them. The difference is that the process that controls the red LEDs is allowed to be run for two interrupt periods, while the process that controls the white LEDs is run once. This allows for a very simplistic priority round robin scheduling that is determined at compile time.
+</p>
+
+<p>
+Finally, and probably the most important part of the entire code is deciding how to assign the SRAM for use as the different process's stack. This might be the largest limiting factor of how many processes can run at once. 
+</p>
+
+</DIV>
+
+</body>
+</html>
+
+

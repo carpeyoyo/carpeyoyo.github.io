@@ -1,0 +1,35 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation:link, .navigation:visited {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #6698FF;
+    width: 90%;
+    text-align: left;
+    padding: 4%;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 4px;
+    background-color: #6698FF;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+}
+
+a:hover, a:active {
+    background-color: #2B65EC;
+}
+
