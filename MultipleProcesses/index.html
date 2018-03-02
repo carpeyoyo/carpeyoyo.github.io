@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Running Multiple Processes on an AVR Microcontroller</title>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-</head>
-<body>
 
-<h1>Carpeyoyo's Projects</h1>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-<hr>
+  <body>   
 
-<DIV style="float: left; width: 150px; background-color: #6698FF;">
-<p>
-<ul>
-  <!-- This is for the side menu bar -->
-  <li><a href="../index.html" class="navigation">Home</a></li>
-  <hr>
-  <hr>
-  <li><a href="index.html" class="navigation">AVR Multiple Processes</a></li>
-  <hr>
-  <li><a href="../Python-TicTacToe/index.html" class="navigation"> Python Tic Tac Toe</a></li>
-  <hr>
-  <li><a href="../PyRule/index.html" class="navigation">PyRule</a></li>
-  <hr>
-  <li><a href="../gtree/index.html" class="navigation">gtree</a></li>
-</ul>
-</p>
-</DIV>
-<DIV style="float: left; width: 60%; border-left: 20px solid white;">
-  <!-- This is for the main body -->
+    <div class="body_class">
 
-<h3>Example of Running Multiple Processes on an AVR Microcontroller</h3>
+      <div class="title_box title_corners">
+	<h1>CARPEYOYO'S GITHUB PROJECTS</h1>
+      </div>
+
+      <div class="orientation_box">
+	
+	<div class="navigation navigation_width">
+	  <a class="navigation_border_top" href="/">HOME</a>
+	  <a class="navigation_border_middle" href="/MultipleProcesses/">AVR Multiple Processes</a>
+	  <a class="navigation_border_middle" href="/gtree/">GTree</a>
+	  <a class="navigation_border_middle" href="/PyRule/">PyRule</a>
+	  <a class="navigation_border_bottom navigation_border_bottom_corners" href="/Python-TicTacToe/">Python Tic Tac Toe</a>
+	</div>
+
+	<div class="content">
+	  <h3>Example of Running Multiple Processes on an AVR Microcontroller</h3>
 
 <p>
 The repository for this project can be found <a href="https://github.com/carpeyoyo/MultipleProcessAVRExample"> here</a>.
@@ -40,7 +35,7 @@ The repository for this project can be found <a href="https://github.com/carpeyo
 The purpose of this project was to attempt to find an easy way in which multiple programs that were meant to loop forever, as microcontroller programs often do, could split the the microcontroller's execution time so that they appeared to be running concurrently. Since I wanted an easy way to see whether the code was working, I sent up two different processes that create a ripple effect on an ATtiny4313 each of which uses six LEDs. See the schematic below for the circuit. 
 </p>
 
-<object type="image/svg+xml" data="ripple_processes.svg" width="560"> SVG file should have been displayed here</object>
+<object style="display:block;margin-left:auto;margin-right:auto;" type="image/svg+xml" data="ripple_processes.svg" width="560"> SVG file should have been displayed here</object>
 
 <p>
 The first process uses the Port B pins and the second process uses the Port D pins. The lone LED that is connected to PA0 flips every time a timer interrupt handler is called. 
@@ -50,7 +45,7 @@ The first process uses the Port B pins and the second process uses the Port D pi
 One of the microcontroller's built-in timer is used as an interrupt, and how often it interrupts the currently running process determines how concurrently the processes seem to be running. For example, look at the youtube video embedded below. 
 </p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AoaD8m736x8?loop=1" frameborder="1" allowfullscreen> Youtube video 
+<iframe style="display:block;margin-left:auto;margin-right:auto;" width="560" height="315" src="https://www.youtube.com/embed/AoaD8m736x8?loop=1" frameborder="1" allowfullscreen> Youtube video 
  </iframe>
 
 <p>
@@ -65,9 +60,12 @@ One other thing that can be seen in the video is that the red LEDs blink twice a
 Finally, and probably the most important part of the entire code is deciding how to assign the SRAM for use as the different process's stack. This might be the largest limiting factor of how many processes can run at once. 
 </p>
 
-</DIV>
-
-</body>
+	</div>
+	
+      </div>
+     
+    </div>
+    
+  </body>
+  
 </html>
-
-

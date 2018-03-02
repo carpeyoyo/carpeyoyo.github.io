@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PyRule -- The Python Programmable CAD</title>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-</head>
-<body>
 
-<h1>Carpeyoyo's Projects</h1>
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
 
-<hr>
+  <body>   
 
-<DIV style="float: left; width: 150px; background-color: #6698FF;">
-<p>
-<ul>
-  <!-- This is for the side menu bar -->
-  <li><a href="../index.html" class="navigation">Home</a></li>
-  <hr>
-  <hr>
-  <li><a href="../MultipleProcesses/index.html" class="navigation">AVR Multiple Processes</a></li>
-  <hr>
-  <li><a href="../Python-TicTacToe/index.html" class="navigation"> Python Tic Tac Toe</a></li>
-  <hr>
-  <li><a href="index.html" class="navigation">PyRule</a></li>
-  <hr>
-  <li><a href="../gtree/index.html" class="navigation">gtree</a></li>
-</ul>
-</p>
-</DIV>
-<DIV style="float: left; width: 60%; border-left: 20px solid white;">
-  <!-- This is for the main body -->
+    <div class="body_class">
 
-<h2>PyRule</h2>
+      <div class="title_box title_corners">
+	<h1>CARPEYOYO'S GITHUB PROJECTS</h1>
+      </div>
 
-<center> <img src="icon.png" alt="PyRule Icon" style="width:100px;height:100px;"> </center>
+      <div class="orientation_box">
+	
+	<div class="navigation navigation_width">
+	  <a class="navigation_border_top" href="/">HOME</a>
+	  <a class="navigation_border_middle" href="/MultipleProcesses/">AVR Multiple Processes</a>
+	  <a class="navigation_border_middle" href="/gtree/">GTree</a>
+	  <a class="navigation_border_middle" href="/PyRule/">PyRule</a>
+	  <a class="navigation_border_bottom navigation_border_bottom_corners" href="/Python-TicTacToe/">Python Tic Tac Toe</a>
+	</div>
+
+	<div class="content">
+	  <h2>PyRule</h2>
+
+<img src="icon.png" alt="PyRule Icon" style="width:100px;height:100px;display:block;margin-left:auto;margin-right:auto">
 
 <h3>The Python Programmable CAD</h3>
 
@@ -42,19 +37,24 @@
 
 <p> PyRule's GUI was written using GTK in C along with the embedded Python. C was choosen as the language for this project as the Python C API and GTK both were C libraries. The GUI consists of two parts, the draw area to the right where the Objects called to be shown in the Python script are displayed and the control menus to the left. The image below shows a screenshot the the main Program control menu. The script file, working directory, and a argument string can be specified here and the Execute and Interrupt buttons control a child process that runs the actual python code. Any standard or error output from the child process is also written to the "Program Output:" text view.</p>
 
-<center> <img src="screenshot_program_control.png" alt="Program Control Menu Screenshot" style="width:65%;"> </center>
+<img src="screenshot_program_control.png" alt="Program Control Menu Screenshot" style="width:65%;display:block;margin-left:auto;margin-right:auto">
 
 <p> The image below shows a screenshot of the Screen Control menu. The rotatation buttons allow a quick change of view from the specified axis. It is important to note that clicking on the draw area will allow you to rotate around the x axis using the Up and Down keys, the y axis using the Left and Right keys, and the z axis using the "," and "." ("<" and ">") keys. The scale of the Objects on the screen and whether the projection uses perspective or orthogonal view can also be specified here. The widget at the bottom of this menu shows the orientation of the axis. </p>
 
-<center> <img src="screenshot_screen_control.png" alt="Screen Control Menu Screenshot" style="width:65%;"> </center>
+<img src="screenshot_screen_control.png" alt="Screen Control Menu Screenshot" style="width:65%;display:block;margin-left:auto;margin-right:auto">
 
 <p> The image below shows the Save Control menu. PyRule allows saving the current screen image as PNG or SVG formats. Also by default it can save the current Objects as a binary STL file. There is also a limited custom save script that can be used. </p>
 
-<center> <img src="screenshot_save_control.png" alt="Save Control Menu Screenshot" style="width:65%;"> </center>
+<img src="screenshot_save_control.png" alt="Save Control Menu Screenshot" style="width:65%;display:block;margin-left:auto;margin-right:auto">
 
-</DIV>
 
-</body>
+
+	</div>
+	
+      </div>
+     
+    </div>
+    
+  </body>
+  
 </html>
-
-
